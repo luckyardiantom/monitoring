@@ -10,14 +10,14 @@
             <select class="btn btn-light dropdown-toggle" id="filter_branch" name="filter_branch">
                 <option value="">Pilih Cabang</option>
                 @foreach ($cabang as $cb)
-                <option value="{{ $cb->kode_igr }}">{{ $cb->kode_igr }}</option>
+                <option value="{{ $cb->kode_igr }}">{{$cb->name}}({{ $cb->kode_igr }})</option>
                 @endforeach
                 </select>
 
                 <select class="btn btn-light dropdown-toggle" id="filter_type" name="filter_type">
                     <option value="">Pilih Tipe</option>
                      @foreach ($tmi as $cb)
-                    <option value="{{ $cb->kode_tmi  }}">{{ $cb->kode_tmi     }}</option>
+                    <option value="{{ $cb->kode_tmi  }}">{{ $cb->nama}}</option>
                     @endforeach
                     </select>
 
@@ -32,12 +32,14 @@
               <tr>
                 <th>Tipe TMI</th>
                 <th>Cabang</th>
+                <th>Kode Margin</th>
                 <th>Kategori</th>
                 <th>Min (%)</th>
                 <th>Saran (%)</th>
                 <th>Max (%)</th>
                 <th>Department</th>
                 <th>Divisi</th>
+
               </tr>
             </thead>
           </table>
@@ -63,6 +65,10 @@ function fill_datatable(filter_branch= '',filter_type=''){
            {
             data:'kode_igr',
             name:'kode_igr'
+           },
+           {
+            data:'kode_mrg',
+            name:'kode_mrg'
            },
            {
             data:'KAT_NAMAKATEGORI',

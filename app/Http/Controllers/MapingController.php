@@ -33,6 +33,7 @@ class MapingController extends Controller
         ->orderBy('branches.name', 'asc')
         ->get(['products.plu',
         'products.id',
+        'products.branch_id',
         'products.status_product_master_id',
         'products.description as desc',
         'status_product_masters.status as status',
@@ -64,6 +65,7 @@ class MapingController extends Controller
         ->select(
         'products.plu',
         'products.id',
+        'products.branch_id',
         'products.status_product_master_id',
         'products.description as desc',
         'status_product_masters.status as status',
@@ -105,6 +107,7 @@ class MapingController extends Controller
         ->orderBy('branches.name', 'asc')
         ->get(['products.plu',
         'products.id',
+        'products.branch_id',
         'products.status_product_master_id',
         'products.description as desc',
         'status_product_masters.status as status',
@@ -133,6 +136,7 @@ class MapingController extends Controller
         ->leftjoin('status_product_masters','products.status_product_master_id','=','status_product_masters.id')
         ->select(
         'products.plu',
+        'products.branch_id',
         'products.id',
         'products.status_product_master_id',
         'products.description as desc',

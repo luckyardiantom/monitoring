@@ -17,10 +17,10 @@
 
 <form action="{{'filtercabang1'}}" method="POST">
     @csrf
-<select class="btn btn-light dropdown-toggle" id="name" name="name">
+<select class="js-example-disabled-results" id="name" name="name">
     <option value="">Pilih Cabang</option>
 @foreach ($cabang as $name)
-<option value="{{ $name->name  }}">{{ $name->name }}</option>
+<option value="{{ $name->name  }}">{{ $name->name }}({{$name->kode_igr}})</option>
 @endforeach
 </select>
 
@@ -35,9 +35,9 @@
         <thead>
           <tr>
             <th>Nama Cabang </th>
-            <th>Kode Margin</th>
+            {{-- <th>Kode Margin</th> --}}
             <th>Kode PLU</th>
-            <th>Deskripsi</th>
+            <th>Kode Margin</th>
               <th>Aksi</th>
               </tr>
             </thead>
@@ -45,14 +45,14 @@
                 @foreach($nilai as $data)
                   <tr>
               <td>{{$data->name}}</td>
+              {{-- <td>{{$data->mrg_id}}</td> --}}
+              <td>{{$data->kodeplu}}</td>
               <td>{{$data->mrg_id}}</td>
-              <td>{{$data->prdcd}}</td>
-              <td>{{$data->long_description}}</td>
               <td>
 
                 <form class="" action="{{ url('/plu/delete/'.$data->id) }}" method="post">
                     @csrf
-                    <a href="{{ url('/plu/edit/'.$data->id) }}" class="btn btn-secondary btn-sm" > <i class="nav-icon fas fa-pen"></i></a>
+                    <a href="{{ url('/plu/tambah/'.$data->id) }}" class="btn btn-secondary btn-sm" > <i class="nav-icon fas fa-plus"></i></a>
                 </form>
               </td>
     </tr>

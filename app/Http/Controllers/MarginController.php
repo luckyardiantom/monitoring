@@ -31,8 +31,8 @@ class MarginController extends Controller
             {
                 $nilai = DB::table('master_margin')
 
-->join('divisi','master_margin.div','=','divisi.DIV_KODEDIVISI')
-->join('department','master_margin.dep','=','department.DEP_KODEDEPARTEMENT')
+    ->join('divisi','master_margin.div','=','divisi.DIV_KODEDIVISI')
+    ->join('department','master_margin.dep','=','department.DEP_KODEDEPARTEMENT')
 ->join('category','master_margin.kat','=','category.KAT_KODEKATEGORI')
 ->join('tipe_tmi','master_margin.kode_tmi','=','tipe_tmi.kode_tmi')
 ->join('branches','master_margin.kode_igr','=','branches.kode_igr')
@@ -42,6 +42,7 @@ class MarginController extends Controller
                 'branches.kode_igr',
                 'tipe_tmi.kode_tmi',
                 'master_margin.margin_min',
+                'master_margin.kode_mrg',
                 'master_margin.margin_saran',
                 'department.DEP_NAMADEPARTEMENT',
                 'master_margin.margin_max',
@@ -60,11 +61,11 @@ class MarginController extends Controller
                 ->join('category','master_margin.kat','=','category.KAT_KODEKATEGORI')
                 ->join('tipe_tmi','master_margin.kode_tmi','=','tipe_tmi.kode_tmi')
                 ->join('branches','master_margin.kode_igr','=','branches.kode_igr')
-
                 ->select(
                 'category.KAT_NAMAKATEGORI',
                 'branches.kode_igr',
                 'tipe_tmi.kode_tmi',
+                'master_margin.kode_mrg',
                 'master_margin.margin_min',
                 'department.DEP_NAMADEPARTEMENT',
                 'divisi.DIV_NAMADIVISI',

@@ -21,7 +21,7 @@
 <select class="js-example-disabled-results" id="name" name="name">
     <option value="">Pilih Cabang</option>
 @foreach ($cabang as $name)
-<option value="{{ $name->name  }}">{{ $name->name }}</option>
+<option value="{{ $name->name  }}">{{ $name->name }} ({{$name->code}})</option>
 @endforeach
 </select>
 

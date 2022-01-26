@@ -74,8 +74,8 @@ Route::post('/filtercabang', 'MapingController@filter');
 //Maping plu
 //Route::resource('/plu', 'PluController');
 Route::resource('/plu', 'PluController');
-Route::get('/plu/edit/{id}', 'PluController@edit');
-Route::post('/plu/edit/{id}/proses', 'PluController@proses_edit');
+Route::get('/plu/tambah/{id}', 'PluController@tambah');
+Route::post('/plu/tambah/{id}/proses', 'PluController@proses_edit');
 Route::post('/filtercabang1', 'PluController@filter');
 
 

@@ -7,6 +7,7 @@
       Edit Data Status Maping Produk
     </div>
     <div class="card-body">
+        
       <form action="{{ url('/maping/edit/'.$nilai->id.'/proses') }}" method="post">
         @csrf
 
