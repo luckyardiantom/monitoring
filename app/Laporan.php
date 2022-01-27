@@ -1,0 +1,15 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Laporan extends Model
+{
+    //
+
+    protected $connection = 'mysql2';
+    protected $table = 'trx_headers';
+    protected $dates = ['trx_headers.trx_date'];
+
+}

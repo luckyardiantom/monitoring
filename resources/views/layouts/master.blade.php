@@ -167,80 +167,80 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="#" class="nav-link active">
                     <i class="nav-icon fas fa-file"></i>
                   <p>
-               MONITORING
-              </p>
-             </a>
+                  MONITORING
+                  </p>
+                </a>
              <ul class="nav nav-treeview">
-                <li class="">
+                  <li class="">
                     {{-- <a href="{{url('/produk')}}"> --}}
                         <a href="/produk" class="nav-link {{ 'produk' == request()->path() ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                       <p>Monitoring Produk CMS</p>
                     </a>
                   </li>
-                   <li class="">
+                  <li class="">
                     <a href="{{url('/master_plu')}}" class="nav-link {{ 'master_plu' == request()->path() ? 'active' : ''}} ">
                           <i class="far fa-circle nav-icon"></i>
                       <p>Monitoring Produk TMI </p>
                     </a>
                   </li>
-                 <li class="">
-                <a href="{{url('/barcode')}}" class="nav-link {{ 'barcode' == request()->path() ? 'active' : ''}} ">
-                    <i class="far fa-circle nav-icon"></i>
-                  <p>Monitoring Barcode</p>
-                </a>
-              </li>
-                 <li class="">
-                <a href="{{url('/transaksi')}}" class="nav-link {{ 'transaksi' == request()->path() ? 'active' : ''}} ">
-                    <i class="far fa-circle nav-icon"></i>
-                  <p>Monitoring BTB </p>
-                </a>
-              </li>
-                 <li class="">
-                <a href="{{url('/failed')}}" class="nav-link {{ 'failed' == request()->path() ? 'active' : ''}} ">
-                    <i class="far fa-circle nav-icon"></i>
-                  <p>Monitoring Failed Jobs</p>
-                </a>
-              </li>
-                 <li class="">
-                <a href="{{url('/prodmast')}}" class="nav-link {{ 'prodmast' == request()->path() ? 'active' : ''}}" ">
-                    <i class="far fa-circle nav-icon"></i>
-                  <p>Monitoring Tarikan Master Produk</p>
-                </a>
-              </li>
-                    <li class="">
-                <a href="{{url('/permintaan')}}" class="nav-link {{ 'permintaan' == request()->path() ? 'active' : ''}} ">
-                    <i class="far fa-circle nav-icon"></i>
-                 <p>Monitoring Permintaan Barang</p>
-                </a>
-              </li>
-              {{-- <li class="">
-                <a href="{{url('/margin')}}" class="nav-link {{ 'margin' == request()->path() ? 'active' : ''}}" ">
-                    <i class="far fa-circle nav-icon"></i>
-                  <p>Master Margin</p>
-                </a>
-              </li> --}}
-            </ul>
-          </li>
+                  <li class="">
+                    <a href="{{url('/barcode')}}" class="nav-link {{ 'barcode' == request()->path() ? 'active' : ''}} ">
+                        <i class="far fa-circle nav-icon"></i>
+                      <p>Monitoring Barcode</p>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="{{url('/transaksi')}}" class="nav-link {{ 'transaksi' == request()->path() ? 'active' : ''}} ">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Monitoring BTB </p>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="{{url('/failed')}}" class="nav-link {{ 'failed' == request()->path() ? 'active' : ''}} ">
+                        <i class="far fa-circle nav-icon"></i>
+                      <p>Monitoring Failed Jobs</p>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="{{url('/prodmast')}}" class="nav-link {{ 'prodmast' == request()->path() ? 'active' : ''}}" ">
+                        <i class="far fa-circle nav-icon"></i>
+                      <p>Monitoring Tarikan Master Produk</p>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="{{url('/permintaan')}}" class="nav-link {{ 'permintaan' == request()->path() ? 'active' : ''}} ">
+                        <i class="far fa-circle nav-icon"></i>
+                    <p>Monitoring Permintaan Barang</p>
+                    </a>
+                  </li>
+              {{--<li class="">
+                    <a href="{{url('/margin')}}" class="nav-link {{ 'margin' == request()->path() ? 'active' : ''}}" ">
+                        <i class="far fa-circle nav-icon"></i>
+                      <p>Master Margin</p>
+                    </a>
+                  </li> --}}
+              </ul>
+            </li>
 
           <li class="nav-item active">
             <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-file"></i>
               <p>
                 MASTER MARGIN
-          </p>
-         </a>
-         <ul class="nav nav-treeview">
-            <li class="">
-                {{-- <a href="{{url('/produk')}}"> --}}
-                    <a href="/margin" class="nav-link {{ 'margin' == request()->path() ? 'active' : ''}}">
-                    <i class="far fa-circle nav-icon"></i>
-                  <p>List Master Margin</p>
-                </a>
-              </li>
+            </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="">
+                    {{-- <a href="{{url('/produk')}}"> --}}
+                        <a href="/margin" class="nav-link {{ 'margin' == request()->path() ? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                      <p>List Master Margin</p>
+                    </a>
+                  </li>
 
-        </ul>
-      </li>
+            </ul>
+          </li>
 
 
 
@@ -249,27 +249,45 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <i class="nav-icon fas fa-file"></i>
           <p>
             MASTER PRODUK
-      </p>
-     </a>
-     <ul class="nav nav-treeview">
-        <li class="">
-            {{-- <a href="{{url('/produk')}}"> --}}
-                <a href="/maping" class="nav-link {{ 'maping' == request()->path() ? 'active' : ''}}">
-                <i class="far fa-circle nav-icon"></i>
-              <p>Maping Status Produk</p>
-            </a>
-          </li>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="">
+                {{-- <a href="{{url('/produk')}}"> --}}
+                    <a href="/maping" class="nav-link {{ 'maping' == request()->path() ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                  <p>Maping Status Produk</p>
+                </a>
+              </li>
 
-          <li class="">
-            {{-- <a href="{{url('/produk')}}"> --}}
-                <a href="/plu" class="nav-link {{ 'plu' == request()->path() ? 'active' : ''}}">
-                <i class="far fa-circle nav-icon"></i>
-              <p>Maping Tipe Produk</p>
-            </a>
-          </li>
+              <li class="">
+                {{-- <a href="{{url('/produk')}}"> --}}
+                    <a href="/plu" class="nav-link {{ 'plu' == request()->path() ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                  <p>Maping Tipe Produk</p>
+                </a>
+              </li>
 
-    </ul>
-  </li>
+        </ul>
+      </li>
+
+      <li class="nav-item active">
+        <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-file"></i>
+          <p>
+            Laporan
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="">
+              {{--<a href="{{url('/produk')}}"> --}}
+                  <a href="/laporan" class="nav-link {{ 'maping' == request()->path() ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                <p>Pembayaran I-Saku</p>
+              </a>
+            </li>
+        </ul>
+      </li>
 
         </ul>
       </nav>

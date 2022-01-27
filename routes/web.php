@@ -82,3 +82,7 @@ Route::post('/filtercabang1', 'PluController@filter');
 
 // //Permintaan
 // Route::resource('/maping', 'MapingController');
+
+//Laporan
+Route::resource('/laporan','LaporanController');
+Route::get('/laporan_download','LaporanController@exportIsaku');
