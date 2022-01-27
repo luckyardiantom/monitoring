@@ -187,6 +187,7 @@ class MapingController extends Controller
      */
     public function edit($id)
     {
+
         $data = Maping::find($id);
         return view('maping.edit', ['nilai' => $data]);
     }
@@ -200,6 +201,9 @@ class MapingController extends Controller
       Maping::where('id', $id)
       ->update([
         'status_product_master_id' => $request->status_product_master_id,
+        'branch_id' => $request->branch_id,
+        'tmi_type_id' => $request->tmi_type_id,
+        'description' => $request->description,
       ]);
 
       return redirect('/maping');

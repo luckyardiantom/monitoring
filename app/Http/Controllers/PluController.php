@@ -24,12 +24,11 @@ class PluController extends Controller
     {
         $nilai = DB::table('master_plu')
         ->join('branches','master_plu.kode_igr','=','branches.kode_igr')
-        ->limit(10000)
+        ->limit(100)
         ->orderBy('branches.name', 'asc')
         ->get(['master_plu.kodeplu',
         'master_plu.long_desc',
         'master_plu.mrg_id',
-        'master_plu.hrg_jual',
         'master_plu.kode_igr',
         'branches.name',
         'master_plu.id']);
@@ -43,13 +42,12 @@ class PluController extends Controller
 
         $fill = DB::table('master_plu')
         ->join('branches','master_plu.kode_igr','=','branches.kode_igr')
-        ->limit(10000)
+        ->limit(100)
        ->orderBy('branches.name', 'asc')
        ->select(
             'master_plu.kodeplu',
             'master_plu.long_desc',
             'master_plu.kode_igr',
-            'master_plu.hrg_jual',
             'master_plu.mrg_id',
             'branches.name',
             'master_plu.id'
@@ -78,13 +76,14 @@ class PluController extends Controller
 
         $nilai = DB::table('master_plu')
         ->join('branches','master_plu.kode_igr','=','branches.kode_igr')
+     //   ->join('products','master_plu.kode_igr','=','products.kode_igr')
+      //  ->where( 'master_plu.kode_igr', 03)
         ->where('branches.name','=',$cab)
-        ->limit(10000)
+        ->limit(100)
            ->orderBy('branches.name', 'asc')
         ->get(['master_plu.kodeplu',
         'master_plu.long_desc',
         'master_plu.kode_igr',
-        'master_plu.hrg_jual',
         'master_plu.mrg_id',
         'branches.name',
         'master_plu.id']);
@@ -96,17 +95,18 @@ class PluController extends Controller
 
         $fill = DB::table('master_plu')
         ->join('branches','master_plu.kode_igr','=','branches.kode_igr')
+       // ->join('products','master_plu.kode_igr','=','products.kode_igr')
+        //->where( 'master_plu.kode_igr', 03)
            ->orderBy('branches.name', 'asc')
         ->select(
             'master_plu.kodeplu',
             'master_plu.long_desc',
             'master_plu.kode_igr',
-            'master_plu.hrg_jual',
             'master_plu.mrg_id',
             'branches.name',
             'master_plu.id'
            )
-        ->limit(10000)
+        ->limit(100)
         ->get();
 
 
@@ -187,7 +187,16 @@ class PluController extends Controller
       $this->validate($request, [
         'kodeplu' => 'required|numeric',
         'kode_igr' => 'required|numeric',
-        'mrg_id' => 'required',
+        'qty_min' => 'required|numeric',
+        'qty_max' => 'required|numeric',
+        'unit_igr' => 'required',
+        'frac_igr' => 'required|numeric',
+        'frac_tmi' => 'required|numeric',
+        'unit_tmi' => 'required',
+        'min_jual' => 'required',
+        'hrg_jual' => 'required|numeric',
+        'mrg_id' => 'required|numeric|unique:master_plu',
+        'long_desc' => 'required',
         //'mrg_id' => 'required|uniqe:master_plu',
       ]);
 
@@ -197,6 +206,16 @@ class PluController extends Controller
         'kodeplu' => $request->kodeplu,
         'kode_igr' => $request->kode_igr,
         'mrg_id' => $request->mrg_id,
+        'qty_min' => $request->qty_min,
+        'qty_max' => $request->qty_max,
+        'unit_igr' => $request->unit_igr,
+        'frac_igr' => $request->frac_igr,
+        'frac_tmi' => $request->frac_tmi,
+        'unit_tmi' => $request->unit_tmi,
+        'hrg_jual' => $request->hrg_jual,
+        'long_desc' => $request->long_desc,
+        'tag' => $request->tag,
+        'min_jual' => $request->min_jual,
       ]);
 
       return redirect('/plu');

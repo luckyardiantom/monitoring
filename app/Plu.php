@@ -12,8 +12,8 @@ class Plu extends Model
 
     protected $fillable = [
         'name', 'tag_id','kodeplu',
-        'mrg_id','kode_igr',
-        'long_desc','id'
+        'mrg_id','kode_igr','display',
+        'long_desc','id','created_at','updated_at'
     ];
 
 }

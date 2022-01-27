@@ -37,6 +37,7 @@
             <th>Nama Cabang </th>
             {{-- <th>Kode Margin</th> --}}
             <th>Kode PLU</th>
+            <th>Deskripsi</th>
             <th>Kode Margin</th>
               <th>Aksi</th>
               </tr>
@@ -47,6 +48,7 @@
               <td>{{$data->name}}</td>
               {{-- <td>{{$data->mrg_id}}</td> --}}
               <td>{{$data->kodeplu}}</td>
+              <td>{{$data->long_desc}}</td>
               <td>{{$data->mrg_id}}</td>
               <td>
 
@@ -62,6 +64,11 @@
 
         </div>
 
+        <script>
+            var dataTable = $('#example2').DataTable({
+        processing : true,
+        serverSide : true,
+        </script>
 
 
 @endsection

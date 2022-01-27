@@ -7,9 +7,39 @@
       Edit Data Status Maping Produk
     </div>
     <div class="card-body">
-        
+
       <form action="{{ url('/maping/edit/'.$nilai->id.'/proses') }}" method="post">
         @csrf
+
+        <div class="form-group">
+            <label>Kode Cabang</label>
+            <input name="branch_id" type="text" class="form-control @error('branch_id') is-invalid @enderror" value="{{ $nilai->branch_id }}" readonly>
+            @error('branch_id')
+            <span class="invalid-feedback">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+          </div>
+
+          <div class="form-group">
+            <label>Kode Tipe TMI</label>
+            <input name="tmi_type_id" type="text" class="form-control @error('tmi_type_id') is-invalid @enderror" value="{{ $nilai->tmi_type_id }}" readonly>
+            @error('tmi_type_id')
+            <span class="invalid-feedback">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+          </div>
+
+          <div class="form-group">
+            <label>Deskripsi</label>
+            <input name="description" type="text" class="form-control @error('description') is-invalid @enderror" value="{{ $nilai->description }}" readonly>
+            @error('description')
+            <span class="invalid-feedback">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+          </div>
 
         <div class="form-group">
           <label>Status</label>
